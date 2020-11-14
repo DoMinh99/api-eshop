@@ -19,19 +19,19 @@ namespace API.Controllers
         {
             _hoaDonBusiness = hoaDonBusiness;
         }
-         
+
         [Route("create-hoa-don")]
         [HttpPost]
         public HoaDonModel CreateItem([FromBody] HoaDonModel model)
         {
-            model.ma_hoa_don = Guid.NewGuid().ToString();
+            model.order_id = Guid.NewGuid().ToString();
             if (model.listjson_chitiet != null)
             {
-                foreach(var item in model.listjson_chitiet)
-                    item.ma_chi_tiet = Guid.NewGuid().ToString();
+                foreach (var item in model.listjson_chitiet)
+                    item.order_id = Guid.NewGuid().ToString();
             }
             _hoaDonBusiness.Create(model);
             return model;
-        } 
+        }
     }
 }

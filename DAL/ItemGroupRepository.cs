@@ -14,13 +14,13 @@ namespace DAL
         {
             _dbHelper = dbHelper;
         }
-        
+
         public List<ItemGroupModel> GetData()
         {
             string msgError = "";
             try
             {
-                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_item_group_get_data");
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_item_related");
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
                 return dt.ConvertTo<ItemGroupModel>().ToList();
@@ -29,6 +29,6 @@ namespace DAL
             {
                 throw ex;
             }
-        } 
+        }
     }
 }

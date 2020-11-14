@@ -18,6 +18,20 @@ namespace BLL
         {
             return _res.Create(model);
         }
+        public bool Delete(string id)
+        {
+            return _res.Delete(id);
+        }
+        //test
+        public List<HoaDonModel> GetAllBill()
+        {
+            return _res.GetAllBill();
+        }
+
+        public List<ChiTietHoaDonModel> GetBillByID(string id)
+        {
+            return _res.GetBillByID(id);
+        }
     }
 
 }

@@ -13,7 +13,8 @@ namespace Model
         public decimal list_price { get; set; }
         public string Image { get; set; }
         public string description { get; set; }
-
         public string specifications { get; set; }
+        public string quantity { get; set; }
+        public string status { get; set; }
     }
 }

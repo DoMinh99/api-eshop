@@ -93,5 +93,20 @@ namespace DAL
                 throw ex;
             }
         }
+
+        public bool Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Edit(int id, ItemModel model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ItemModel> GetProductRelated(int id, string category_id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
